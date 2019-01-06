@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="257d7a93-d3bb-4925-b441-8c5c3795701e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/vertx/starter/HttpServerVerticle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/vertx/starter/WikiDatabaseVerticle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db-queries.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/vertx/starter/MainVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/vertx/starter/MainVerticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/vertx/starter/HttpServerVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/vertx/starter/HttpServerVerticle.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,41 +18,26 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/io/vertx/starter/MainVerticle.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
-              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/vertx/starter/HttpServerVerticle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-640">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-              <folding>
-                <element signature="method#indexHandler#0;class#HttpServerVerticle#0" />
-                <element signature="method#pageCreateHandler#0;class#HttpServerVerticle#0" />
-                <element signature="method#pageDeleteHandler#0;class#HttpServerVerticle#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/vertx/starter/WikiDatabaseVerticle.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/vertx/starter/HttpServerVerticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="580">
+              <caret line="134" column="57" selection-start-line="134" selection-start-column="57" selection-end-line="134" selection-end-column="57" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#onMessage#0;class#WikiDatabaseVerticle#0" />
-                <element signature="method#fetchAllPages#0;class#WikiDatabaseVerticle#0" />
-                <element signature="method#fetchPage#0;class#WikiDatabaseVerticle#0" />
-                <element signature="method#createPage#0;class#WikiDatabaseVerticle#0" />
-                <element signature="method#savePage#0;class#WikiDatabaseVerticle#0" />
-                <element signature="method#reportQueryError#0;class#WikiDatabaseVerticle#0" />
+                <element signature="method#start#0;class#HttpServerVerticle#0" />
+                <element signature="method#indexHandler#0;class#HttpServerVerticle#0" />
+                <element signature="method#pageRenderingHandler#0;class#HttpServerVerticle#0" />
+                <element signature="method#pageCreateHandler#0;class#HttpServerVerticle#0" />
+                <element signature="method#pageUpdateHandler#0;class#HttpServerVerticle#0" />
+                <element signature="method#pageDeleteHandler#0;class#HttpServerVerticle#0" />
               </folding>
             </state>
           </provider>
@@ -72,13 +53,6 @@
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -97,10 +71,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/header.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/footer.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/page.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/io/vertx/starter/HttpServerVerticle.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/db-queries.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/io/vertx/starter/WikiDatabaseVerticle.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/vertx/starter/MainVerticle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/vertx/starter/HttpServerVerticle.java" />
       </list>
     </option>
   </component>
@@ -177,7 +149,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546794126468" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546794935714" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -225,7 +197,7 @@
     <frame x="-1891" y="22" width="1877" height="1006" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2669235" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2669235" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -234,7 +206,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32875144" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32875144" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39977092" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -252,18 +224,6 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/io/vertx/starter/WikiDatabaseVerticle.java</url>
-          <line>63</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.editorconfig">
@@ -307,23 +267,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/page.ftl">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+        <state relative-caret-position="495">
+          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/json/JsonArray.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/impl/FutureImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="165">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#539#540#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-sql-common/3.6.0/vertx-sql-common-3.6.0.jar!/io/vertx/ext/sql/ResultSet.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
+        <state relative-caret-position="165">
           <caret line="52" selection-start-line="52" selection-end-line="52" />
           <folding>
             <element signature="e#1345#1346#0" expanded="true" />
@@ -331,34 +296,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/impl/FutureImpl.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/json/JsonArray.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="228">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
           <folding>
-            <element signature="e#539#540#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/io/vertx/starter/MainVerticleTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/page.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db-queries.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        <state relative-caret-position="680">
+          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/vertx/starter/MainVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -367,35 +326,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/vertx/starter/HttpServerVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-640">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="580">
+          <caret line="134" column="57" selection-start-line="134" selection-start-column="57" selection-end-line="134" selection-end-column="57" />
           <folding>
+            <element signature="method#start#0;class#HttpServerVerticle#0" />
             <element signature="method#indexHandler#0;class#HttpServerVerticle#0" />
+            <element signature="method#pageRenderingHandler#0;class#HttpServerVerticle#0" />
             <element signature="method#pageCreateHandler#0;class#HttpServerVerticle#0" />
+            <element signature="method#pageUpdateHandler#0;class#HttpServerVerticle#0" />
             <element signature="method#pageDeleteHandler#0;class#HttpServerVerticle#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/vertx/starter/WikiDatabaseVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onMessage#0;class#WikiDatabaseVerticle#0" />
-            <element signature="method#fetchAllPages#0;class#WikiDatabaseVerticle#0" />
-            <element signature="method#fetchPage#0;class#WikiDatabaseVerticle#0" />
-            <element signature="method#createPage#0;class#WikiDatabaseVerticle#0" />
-            <element signature="method#savePage#0;class#WikiDatabaseVerticle#0" />
-            <element signature="method#reportQueryError#0;class#WikiDatabaseVerticle#0" />
           </folding>
         </state>
       </provider>
