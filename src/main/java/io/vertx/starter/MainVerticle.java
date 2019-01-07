@@ -85,7 +85,7 @@ public class MainVerticle extends AbstractVerticle {
     router.post().handler(BodyHandler.create());
     router.post("/save").handler(this::pageUpdateHandler);
     router.post("/create").handler(this::pageCreateHandler);
-//    router.post("/delete").handler(this::pageDeleteHandler);
+    router.post("/delete").handler(this::pageDeletionHandler);
 
     templateEngine = FreeMarkerTemplateEngine.create(vertx);
 
@@ -216,5 +216,22 @@ public class MainVerticle extends AbstractVerticle {
       }
     });
   }
+
+  private void pageDeletionHandler(RoutingContext context) {
+    String id = context.request().getParam("id");
+    dbClient.getConnection(car ->{
+      if (car.succeeded()) {
+        SQLConnection connection = car.result();
+        connection.updateWithParams(SQL_DELETE_PAGE, new JsonArray().add(id), res -> {
+          if (res.succeeded()) {
+            context.response().setStatusCode(303);
+            context.response().putHeader("Location", "/");
+            context.response().end();
+          } else {context.fail(res.cause());}
+        });
+      } else {context.fail(car.cause());}
+    });
+  }
+
 
 }
