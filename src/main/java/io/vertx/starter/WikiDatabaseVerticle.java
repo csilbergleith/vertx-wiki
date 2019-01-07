@@ -3,6 +3,7 @@ package io.vertx.starter;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import io.vertx.core.eventbus.Message;
+import io.vertx.core.eventbus.MessageConsumer;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.jdbc.JDBCClient;
@@ -15,7 +16,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 public class WikiDatabaseVerticle extends AbstractVerticle {
 
@@ -91,7 +94,7 @@ public class WikiDatabaseVerticle extends AbstractVerticle {
               LOGGER.error("Database preparation error", create.cause());
               startFuture.fail(create.cause());
             } else {
-              vertx.eventBus().consumer(config().getString(CONFIG_WIKIDB_QUEUE, "wikidb.queue"));
+              vertx.eventBus().consumer(config().getString(CONFIG_WIKIDB_QUEUE, "wikidb.queue"), this::onMessage);
               startFuture.complete();
             }
           });
@@ -132,7 +135,13 @@ public class WikiDatabaseVerticle extends AbstractVerticle {
     private void fetchAllPages(Message<JsonObject> message) {
       dbClient.query(sqlQueries.get(SqlQuery.ALL_PAGES), res -> {
         if (res.succeeded()) {
-
+          List<String> pages = res.result()
+            .getResults()
+            .stream()
+            .map(json -> json.getString(0))
+            .sorted()
+            .collect(Collectors.toList());
+          message.reply(new JsonObject().put("pages", new JsonArray(pages)));
         } else {reportQueryError(message, res.cause());}
       });
     }
@@ -162,6 +171,7 @@ public class WikiDatabaseVerticle extends AbstractVerticle {
       JsonObject request = message.body();
       JsonArray data = new JsonArray()
         .add(request.getString("title"))
+
         .add(request.getString("markdown"));
 
       dbClient.updateWithParams(sqlQueries.get(SqlQuery.CREATE_PAGE), data, res -> {

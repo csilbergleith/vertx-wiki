@@ -5,6 +5,7 @@ import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import io.vertx.core.eventbus.DeliveryOptions;
 import io.vertx.core.http.HttpServer;
+import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
@@ -29,10 +30,11 @@ public class HttpServerVerticle extends AbstractVerticle {
       "\n" +
       "Feel-free to write in Markdown!\n";
 
-  private String wikiDbQueue;
+  private String wikiDbQueue = "wikidb.queue";
 
   @Override
   public void start(Future<Void> startFuture) throws Exception {
+
     wikiDbQueue = config().getString(CONFIG_WIKIDB_QUEUE, "wikidb.queue");
 
     System.out.println("Setting routes ...");
@@ -108,7 +110,7 @@ public class HttpServerVerticle extends AbstractVerticle {
         context.put("content", Processor.process(rawContent));
         context.put("timestamp", new Date().toString());
 
-        templateEngine.render(context.data(), "templates/requestedPage.ftl", ar -> {
+        templateEngine.render(context.data(), "templates/page.ftl", ar -> {
           if (ar.succeeded()) {
             context.response().putHeader("Content-Type", "text/html");
             context.response().end(ar.result());
