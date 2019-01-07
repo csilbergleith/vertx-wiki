@@ -101,11 +101,12 @@ public class HttpServerVerticle extends AbstractVerticle {
       if (reply.succeeded()) {
         JsonObject body = (JsonObject) reply.result().body();
 
+
         boolean found = body.getBoolean("found");
         String rawContent = body.getString("rawContent", EMPTY_PAGE_MARKDOWN);
         context.put("title", requestedPage);
-        context.put("id", body.getInteger("id"));
-        context.put("newPage", found ? "yes" : "no");
+        context.put("id", body.getInteger("id", -1));
+        context.put("newPage", found ? "no" : "yes");
         context.put("rawContent", rawContent);
         context.put("content", Processor.process(rawContent));
         context.put("timestamp", new Date().toString());
@@ -137,7 +138,7 @@ public class HttpServerVerticle extends AbstractVerticle {
   private void pageUpdateHandler(RoutingContext context) {
     String title = context.request().getParam("title");
 
-    System.out.println("Received a request to update page titled " + title);
+    System.out.println("Received a request to update page titled " + title + " is new page? " + context.request().getParam("newPage"));
 
     JsonObject request = new JsonObject()
       .put("id", context.request().getParam("id"))
@@ -145,7 +146,7 @@ public class HttpServerVerticle extends AbstractVerticle {
       .put("markdown", context.request().getParam("markdown"));
 
     DeliveryOptions options = new DeliveryOptions();
-    if ("yes".equalsIgnoreCase((context.request().getParam("newPage")))) {
+    if ("yes".equalsIgnoreCase(context.request().getParam("newPage"))) {
       options.addHeader("action", "create-page");
     } else {
       options.addHeader("action", "save-page");

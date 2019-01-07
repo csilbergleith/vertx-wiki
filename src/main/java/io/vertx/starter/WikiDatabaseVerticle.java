@@ -133,6 +133,7 @@ public class WikiDatabaseVerticle extends AbstractVerticle {
     }
 
     private void fetchAllPages(Message<JsonObject> message) {
+      System.out.println("Fetch All Pages");
       dbClient.query(sqlQueries.get(SqlQuery.ALL_PAGES), res -> {
         if (res.succeeded()) {
           List<String> pages = res.result()
@@ -148,6 +149,7 @@ public class WikiDatabaseVerticle extends AbstractVerticle {
 
     private void fetchPage(Message<JsonObject> message) {
       String requestedPage = message.body().getString("page");
+      System.out.println("Fetch page " + requestedPage);
       JsonArray params = new JsonArray().add(requestedPage);
 
       dbClient.queryWithParams(sqlQueries.get(SqlQuery.GET_PAGE), params, fetch -> {
@@ -173,7 +175,7 @@ public class WikiDatabaseVerticle extends AbstractVerticle {
         .add(request.getString("title"))
 
         .add(request.getString("markdown"));
-
+      System.out.println("Create page " + request.getString("title"));
       dbClient.updateWithParams(sqlQueries.get(SqlQuery.CREATE_PAGE), data, res -> {
         if (res.succeeded()) {
           message.reply("ok");
@@ -186,7 +188,7 @@ public class WikiDatabaseVerticle extends AbstractVerticle {
       JsonArray data = new JsonArray()
         .add(request.getString("markdown"))
         .add(request.getString("id"));
-
+      System.out.println("Save page " + request.getString("id"));
       dbClient.updateWithParams(sqlQueries.get(SqlQuery.SAVE_PAGE), data, res -> {
         if (res.succeeded()) {
           message.reply("ok");
